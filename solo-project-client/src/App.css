@@ -1,16 +1,34 @@
 .App {
   text-align: center;
+  font-family: "Montserrat",sans-serif;
+  text-transform: uppercase;
 }
 
-.App-header {
-  background-color: #282c34;
+/* .App-header {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+} */
+
+button {
+  text-transform: uppercase;
+  border-radius: 15px;
+  background-color: #882434;
   color: white;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.next-back-button {
+  border: none;
+  border-radius: 15px;
+  background-color: white;
+  color: grey;
+  padding: 0.5rem;
+  margin: 0.5rem;
 }
 
 

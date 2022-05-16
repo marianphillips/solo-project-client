@@ -1,17 +1,15 @@
 .App {
   text-align: center;
   font-family: "Montserrat",sans-serif;
-  text-transform: uppercase;
 }
 
-/* .App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-} */
+header {
+  margin-top: 2rem;
+}
+
+p {
+  padding: 1rem;
+}
 
 button {
   text-transform: uppercase;
@@ -30,5 +28,16 @@ button {
   padding: 0.5rem;
   margin: 0.5rem;
 }
+
+.unselected-button {
+  text-transform: uppercase;
+  border-radius: 15px;
+  background-color: #e46b7f;
+  color: white;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+
 
 

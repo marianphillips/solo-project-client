@@ -1,26 +1,28 @@
-import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import './App.css';
-import Question from './components/Question'
-import LandingPage from './components/LandingPage'
-import Match from './components/Match'
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header"
+import Question from "./components/Question";
+import LandingPage from "./components/LandingPage";
+import Match from "./components/Match";
+const blank = require("./data/blank");
 
 function App() {
-  const [answers, setAnswers] = useState({})
+  const [answers, setAnswers] = useState(blank);
 
   return (
-    <div className="App">
-        <img src={require('./images/pw.PNG')} alt="pacific wines logo" />
-        <p> finder </p>   
-        <Routes>
-          <Route path='/' element={<LandingPage /> } />
-          <Route path='/quiz' element={<Question setAnswers={setAnswers}/>} />
-          <Route path='/match' element={ <Match answers={answers}/> } />
-        </Routes>
+    <div className='App'>
+      <Header />
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route
+          path='/quiz'
+          element={<Question answers={answers} setAnswers={setAnswers} />}
+        />
+        <Route path='/match' element={<Match answers={answers} setAnswers={setAnswers} />} />
+      </Routes>
     </div>
   );
 }
 
 export default App;
-
-

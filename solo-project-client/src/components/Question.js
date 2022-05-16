@@ -1,19 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 const data = require("../data/data");
 
 function Question({ answers, setAnswers }) {
   const [questionNumber, setQuestionNumber] = useState(0);
+  const [fade, setFade] = useState("question-out");
+
+  useEffect(() => {
+    setFade("question-in")
+  }, [questionNumber])
+
   const navigate = useNavigate();
 
   const nextButton = () => {
-    if (questionNumber !== 7) {
-      setQuestionNumber(questionNumber + 1);
+    if (questionNumber !== (data.length - 1)) {
+        setFade("question-out")
+        setTimeout(setQuestionNumber(questionNumber + 1), 1500);
     }
   };
 
   const backButton = () => {
     if (questionNumber !== 0) {
+        setFade("question-out")
       setQuestionNumber(questionNumber - 1);
     }
   };
@@ -66,7 +74,7 @@ function Question({ answers, setAnswers }) {
   };
 
   return (
-    <div className='Question'>
+    <div className={fade}>
       <div>
         <h2>Question {data[questionNumber].number}</h2>
       </div>
@@ -88,8 +96,15 @@ function Question({ answers, setAnswers }) {
         ))}
       </div>
       <div>
-        {questionNumber === 7 ? (
-          <button onClick={submitAnswers}>FIND YOUR WINE</button>
+        {questionNumber === (data.length - 1) ? (
+            <>
+            <button className='next-back-button' onClick={backButton}>
+              ← Back
+            </button>
+            <div>
+            <button className='find-wine-button' onClick={submitAnswers}>find your wine</button>
+            </div>
+          </>       
         ) : questionNumber === 0 ? (
           <button className='next-back-button' onClick={nextButton}>
             Next →

@@ -69,7 +69,9 @@ function Question({ answers, setAnswers, setWine }) {
     event.preventDefault();
     const options =  {
         method: 'POST',
-        "content-type": "application/json",
+        headers: {
+            "content-type": "application/json"
+        },
         body: JSON.stringify(answers)
     }
 

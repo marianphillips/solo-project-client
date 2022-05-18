@@ -4,11 +4,11 @@ const { dataBoth, dataRed, dataWhite } = require("../data/data");
 
 function Question({ answers, setAnswers, setWine }) {
   const [questionNumber, setQuestionNumber] = useState(0);
-  const [fade, setFade] = useState("question-out");
+  const [fade, setFade] = useState("fade-out");
   const [data, setData] = useState(dataBoth)
 
   useEffect(() => {
-    setFade("question-in")
+    setFade("fade-in")
     if(answers.type === "red") setData(dataRed)
     if(answers.type === "na" || answers.type === "sparkling") setData(dataBoth)
     if(answers.type === "white" || answers.type === "rose") setData(dataWhite)
@@ -18,14 +18,14 @@ function Question({ answers, setAnswers, setWine }) {
 
   const nextButton = () => {
     if (questionNumber !== (data.length - 1)) {
-        setFade("question-out")
+        setFade("fade-out")
         setTimeout(setQuestionNumber(questionNumber + 1), 1500);
     }
   };
 
   const backButton = () => {
     if (questionNumber !== 0) {
-        setFade("question-out")
+        setFade("fade-out")
       setQuestionNumber(questionNumber - 1);
     }
   };

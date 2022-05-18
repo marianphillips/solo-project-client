@@ -1,16 +1,23 @@
+import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 const blank = require("../data/blank");
 
 function Match({ wine, setAnswers }) {
+  const [fade, setFade] = useState('fade-out')
   const navigate = useNavigate();
   
+  useEffect(() => {
+      setFade('fade-in')
+  }, [])
+
    const retake = () => {
     setAnswers(blank)
     navigate("/quiz");
   };
 
   return (
-    <>{wine && <>
+    <div className={fade}>
+    {wine && <>
       <p>Here is your match!</p>
       <div className="wine-box">
      <div className="wine-box-image">
@@ -30,7 +37,7 @@ function Match({ wine, setAnswers }) {
      </div>
      </>}
       <button onClick={retake}>Re-Take Quiz</button>
-    </>
+    </div>
   );
 }
 

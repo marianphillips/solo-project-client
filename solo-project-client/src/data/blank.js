@@ -1,6 +1,6 @@
 const blank = {
   type: "",
-  flavour: "",
+  sweet: "",
   body: "",
   traits: [],
   varietalsRed: [],

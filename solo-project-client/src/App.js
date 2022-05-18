@@ -9,6 +9,7 @@ const blank = require("./data/blank");
 
 function App() {
   const [answers, setAnswers] = useState(blank);
+  const [wine, setWine] = useState("")
 
   return (
     <div className='App'>
@@ -17,9 +18,9 @@ function App() {
         <Route path='/' element={<LandingPage />} />
         <Route
           path='/quiz'
-          element={<Question answers={answers} setAnswers={setAnswers} />}
+          element={<Question answers={answers} setAnswers={setAnswers} setWine={setWine}/>}
         />
-        <Route path='/match' element={<Match answers={answers} setAnswers={setAnswers} />} />
+        <Route path='/match' element={<Match wine={wine} setAnswers={setAnswers} />} />
       </Routes>
     </div>
   );

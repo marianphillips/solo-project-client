@@ -1,4 +1,15 @@
+#root {
+display: grid;
+grid-template: 
+".  .  ." minmax(3.5rem, 1fr)
+". app ." auto 
+".  .  ." 1fr  /
+1fr minmax(auto, 31.5rem) 1fr;
+
+}
+
 .App {
+  grid-area: app;
   text-align: center;
   font-family: "Montserrat",sans-serif;
 }
@@ -56,6 +67,52 @@ button {
   transition: opacity 0.5s ease;
   opacity: 1;
  }
+
+ .wine-box {
+   text-align: left;
+   display: grid;
+   grid-gap: 1rem;
+   padding: 1rem;
+   border: 1px solid black;
+   width: minmax(320px, 500px);
+   grid-template-columns: 200px 280px;
+   margin-bottom: 2rem;
+ }
+
+ .wine-box-text {
+   display: grid;
+   grid-template: 
+   "info info" auto
+   ".    button" auto /
+   1fr 1fr;
+ }
+
+ .wine-box-info {
+   grid-area: info;
+ }
+
+ .wine-box-link {
+   grid-area: button;
+ }
+
+ .wine-box-link a {
+  text-decoration: none;
+  color: white;
+  background-color: #882434;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+ .wine-image {
+   width: 200px;
+ }
+
+h4, p {
+  margin: 0;
+  padding-left: 0;
+}
+
+
 
 
 

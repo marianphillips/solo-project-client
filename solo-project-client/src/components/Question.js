@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-const data = require("../data/data");
+const { dataBoth, dataRed, dataWhite } = require("../data/data");
 
-function Question({ answers, setAnswers }) {
+function Question({ answers, setAnswers, setWine }) {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [fade, setFade] = useState("question-out");
+  const [data, setData] = useState(dataBoth)
 
   useEffect(() => {
     setFade("question-in")
-  }, [questionNumber])
+    if(answers.type === "red") setData(dataRed)
+    if(answers.type === "na" || answers.type === "sparkling") setData(dataBoth)
+    if(answers.type === "white" || answers.type === "rose") setData(dataWhite)
+  }, [questionNumber, answers.type])
 
   const navigate = useNavigate();
 
@@ -61,16 +65,25 @@ function Question({ answers, setAnswers }) {
     }
   };
 
-  const submitAnswers = () => {
+  const submitAnswers = (event) => {
+    event.preventDefault();
+    const options =  {
+        method: 'POST',
+        "content-type": "application/json",
+        body: JSON.stringify(answers)
+    }
+
+    fetch(process.env.REACT_APP_API_URL + '/wine', options)
+    .then(res =>  res.json())
+    .then(json => setWine(json.data))
+
     console.log(answers);
     navigate("/match");
   };
 
   const isSelected = (value) => {
-    return (
-      answers[data[questionNumber].key].includes(value) ||
-      answers[data[questionNumber].key] === value
-    );
+    if (data[questionNumber].type === "chooseOne") return answers[data[questionNumber].key] === value
+    if (data[questionNumber].type === "chooseMany") return answers[data[questionNumber].key].includes(value)
   };
 
   return (
@@ -85,13 +98,13 @@ function Question({ answers, setAnswers }) {
         {data[questionNumber].answers.map((answer, index) => (
           <button
             className={
-              isSelected(answer) ? "selected-button" : "unselected-button"
+              isSelected(answer.value) ? "selected-button" : "unselected-button"
             }
             key={index}
             onClick={amendAnswers}
-            value={answer}
+            value={answer.value}
           >
-            {answer}
+            {answer.button}
           </button>
         ))}
       </div>
@@ -102,7 +115,7 @@ function Question({ answers, setAnswers }) {
               ← Back
             </button>
             <div>
-            <button className='find-wine-button' onClick={submitAnswers}>find your wine</button>
+            <button className='find-wine-button' onClick={submitAnswers} type='submit'>find your wine</button>
             </div>
           </>       
         ) : questionNumber === 0 ? (

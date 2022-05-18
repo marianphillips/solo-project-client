@@ -9,9 +9,7 @@ function LandingPage() {
 
   return (
     <>
-      <p>
-        Find your perfect bottle at Pacific Wines through a few quick questions...
-      </p>
+      <p>Find your perfect bottle at Pacific Wines through a few quick questions...</p>
       <button onClick={takeQuiz}>take the quiz</button>
     </>
   );

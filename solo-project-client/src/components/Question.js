@@ -9,9 +9,9 @@ function Question({ answers, setAnswers, setWine }) {
 
   useEffect(() => {
     setFade("fade-in")
-    if(answers.type === "Red") setData(dataRed)
-    if(answers.type === "na" || answers.type === "Sparkling") setData(dataBoth)
-    if(answers.type === "White" || answers.type === "Rose") setData(dataWhite)
+    if(answers.type === "red") setData(dataRed)
+    if(answers.type === "na" || answers.type === "sparkling") setData(dataBoth)
+    if(answers.type === "white" || answers.type === "rose") setData(dataWhite)
   }, [questionNumber, answers.type])
 
   const navigate = useNavigate();

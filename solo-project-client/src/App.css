@@ -87,7 +87,7 @@ button {
    grid-template: 
    "info info" auto
    ".    button" auto /
-   1fr 1fr;
+   1fr  1.1fr;
  }
 
  .wine-box-info {
@@ -114,6 +114,7 @@ h4, p {
   margin: 0;
   padding-left: 0;
 }
+
 
 
 

@@ -3,10 +3,8 @@ const blank = {
   sweet: "",
   body: "",
   traits: [],
-  varietalsRed: [],
-  varietalsWhite: [],
-  charactersRed: [],
-  charactersWhite: [],
+  varietals: [],
+  characteristics: []
 };
 
 module.exports = blank;

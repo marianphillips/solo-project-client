@@ -20,8 +20,8 @@ const dataBoth = [
     answers: [
       { button: "AS DRY AS IT COMES", value: "dry" },
       { button: "MOSTLY DRY", value: "off dry" },
-      { button: "SOMEWHAT SWEET", value: "sweet" },
-      { button: "DESSERT LEVEL SWEET", value: "dessert" },
+      { button: "SOMEWHAT SWEET", value: "off dry also" },
+      { button: "DESSERT LEVEL SWEET", value: "sweet" },
       { button: "I DON'T MIND", value: "na" },
     ],
   },
@@ -31,7 +31,7 @@ const dataBoth = [
     key: "body",
     question: "Do you have a preference for the wine's body?",
     answers: [
-      { button: "PACKS A PUNCH!", value: "full" },
+      { button: "PACKS A PUNCH!", value: "full bodied" },
       { button: "FULL BUT RESTRAINED", value: "medium full" },
       { button: "MEDIUM", value: "medium" },
       { button: "LIGHT AND AIRY", value: "light" },
@@ -54,7 +54,7 @@ const dataBoth = [
   {
     number: 5,
     type: "chooseMany",
-    key: "varietalsRed",
+    key: "varietals",
     question:
       "When drinking red wine, are there any varieties you particularly like?",
     answers: [
@@ -68,7 +68,7 @@ const dataBoth = [
   {
     number: 6,
     type: "chooseMany",
-    key: "varietalsWhite",
+    key: "varietals",
     question:
       "When drinking white wine, are there any varieties you particularly like?",
     answers: [
@@ -83,7 +83,7 @@ const dataBoth = [
   {
     number: 7,
     type: "chooseMany",
-    key: "charactersRed",
+    key: "characteristics",
     question: "When drinking your red wine, what characteristics do you love?",
     answers: [
       { button: "RED FRUITS", value: "red fruit" },
@@ -104,7 +104,7 @@ const dataBoth = [
   {
     number: 8,
     type: "chooseMany",
-    key: "charactersWhite",
+    key: "characteristics",
     question:
       "When drinking your white or sparkling wine, what characteristics do you love??",
     answers: [
@@ -149,8 +149,8 @@ const dataRed = [
     answers: [
       { button: "AS DRY AS IT COMES", value: "dry" },
       { button: "MOSTLY DRY", value: "off dry" },
-      { button: "SOMEWHAT SWEET", value: "sweet" },
-      { button: "DESSERT LEVEL SWEET", value: "dessert" },
+      { button: "SOMEWHAT SWEET", value: "off dry also" },
+      { button: "DESSERT LEVEL SWEET", value: "sweet" },
       { button: "I DON'T MIND", value: "na" },
     ],
   },
@@ -160,7 +160,7 @@ const dataRed = [
     key: "body",
     question: "Do you have a preference for the wine's body?",
     answers: [
-      { button: "PACKS A PUNCH!", value: "full" },
+      { button: "PACKS A PUNCH!", value: "full bodied" },
       { button: "FULL BUT RESTRAINED", value: "medium full" },
       { button: "MEDIUM", value: "medium" },
       { button: "LIGHT AND AIRY", value: "light" },
@@ -183,7 +183,7 @@ const dataRed = [
   {
     number: 5,
     type: "chooseMany",
-    key: "varietalsRed",
+    key: "varietals",
     question:
       "When drinking red wine, are there any varieties you particularly like?",
     answers: [
@@ -197,7 +197,7 @@ const dataRed = [
   {
     number: 6,
     type: "chooseMany",
-    key: "charactersRed",
+    key: "characteristics",
     question: "When drinking your red wine, what characteristics do you love?",
     answers: [
       { button: "RED FRUITS", value: "red fruit" },
@@ -239,8 +239,8 @@ const dataWhite = [
     answers: [
       { button: "AS DRY AS IT COMES", value: "dry" },
       { button: "MOSTLY DRY", value: "off dry" },
-      { button: "SOMEWHAT SWEET", value: "sweet" },
-      { button: "DESSERT LEVEL SWEET", value: "dessert" },
+      { button: "SOMEWHAT SWEET", value: "off dry also" },
+      { button: "DESSERT LEVEL SWEET", value: "sweet" },
       { button: "I DON'T MIND", value: "na" },
     ],
   },
@@ -250,7 +250,7 @@ const dataWhite = [
     key: "body",
     question: "Do you have a preference for the wine's body?",
     answers: [
-      { button: "PACKS A PUNCH!", value: "full" },
+      { button: "PACKS A PUNCH!", value: "full bodied" },
       { button: "FULL BUT RESTRAINED", value: "medium full" },
       { button: "MEDIUM", value: "medium" },
       { button: "LIGHT AND AIRY", value: "light" },
@@ -273,7 +273,7 @@ const dataWhite = [
   {
     number: 5,
     type: "chooseMany",
-    key: "varietalsWhite",
+    key: "varietals",
     question:
       "When drinking white wine, are there any varieties you particularly like?",
     answers: [
@@ -288,7 +288,7 @@ const dataWhite = [
   {
     number: 6,
     type: "chooseMany",
-    key: "charactersWhite",
+    key: "characteristics",
     question:
       "When drinking your white or sparkling wine, what characteristics do you love??",
     answers: [

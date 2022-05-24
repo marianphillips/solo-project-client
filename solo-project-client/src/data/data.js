@@ -77,7 +77,7 @@ const dataBoth = [
       { button: "CHENIN BLANC", value: "Chenin Blanc" },
       { button: "PINOT GRIGIO", value: "Pinot Grigio" },
       { button: "NONE OF THESE", value: "none" },
-      { button: "I DON'T MIND", value: "" },
+      { button: "I DON'T MIND", value: "na" },
     ],
   },
   {
@@ -122,7 +122,7 @@ const dataBoth = [
       { button: "NUTTY", value: "nutty" },
       { button: "TOAST", value: "toast" },
       { button: "OAK", value: "oak" },
-      { button: "I'M NOT SURE", value: "" },
+      { button: "I'M NOT SURE", value: "na" },
     ],
   },
 ];

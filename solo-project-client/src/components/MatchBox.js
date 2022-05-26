@@ -1,5 +1,5 @@
 function MatchBox({ wine }) {
-      
+
   return (
       <div className="wine-box">
      <div className="wine-box-image">
@@ -9,8 +9,10 @@ function MatchBox({ wine }) {
         <div className="wine-box-info">
         <h4>{wine.producer}</h4>
         <h4>{wine.name}</h4>
+        </div>
+        <div className="wine-box-desc">
         <p>{wine.description}</p>
-        <p>{wine.price}</p>
+        <p><strong>{wine.price}</strong></p>
         </div>
         <div className="wine-box-link">
             <a href={wine.url}>More Details</a>

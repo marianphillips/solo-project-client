@@ -20,7 +20,7 @@ function App() {
           path='/quiz'
           element={<Question answers={answers} setAnswers={setAnswers} setWine={setWine}/>}
         />
-        <Route path='/match' element={<Match wine={wine} setAnswers={setAnswers} />} />
+        <Route path='/match' element={<Match wine={wine} setAnswers={setAnswers} setWine={setWine}/>} />
       </Routes>
     </div>
   );

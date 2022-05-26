@@ -86,12 +86,17 @@ button {
    display: grid;
    grid-template: 
    "info info" auto
+   "desc desc" auto
    ".    button" auto /
    1fr  1.1fr;
  }
 
  .wine-box-info {
    grid-area: info;
+ }
+
+ .wine-box-desc {
+   grid-area: desc;
  }
 
  .wine-box-link {
@@ -116,7 +121,31 @@ h4, p {
 }
 
 
+@media screen and (max-width: 500px) {
+  .wine-box {
+    grid-template-columns: 130px auto;
+    width: auto;
+    margin: 0.5rem;
+    margin-bottom: 2rem;
+  }
 
+  .wine-image {
+    width: 130px;
+  }
+
+  header img {
+    width: 130px;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .wine-box-link a {
+    font-size: 0.7rem;
+    border-radius: 0.7rem;
+  }
+}
 
 
 

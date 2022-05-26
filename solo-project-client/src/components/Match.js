@@ -3,15 +3,16 @@ import { useNavigate } from "react-router-dom";
 import MatchBox from "./MatchBox"
 const blank = require("../data/blank");
 
-function Match({ wine, setAnswers }) {
+function Match({ wine, setAnswers, setWine }) {
   const [fade, setFade] = useState('fade-out')
   const navigate = useNavigate();
   
   useEffect(() => {
-      setFade('fade-in')
+      setTimeout(() => setFade('fade-in'), 800)
   }, [])
 
    const retake = () => {
+    setWine("")
     setAnswers(blank)
     navigate("/quiz");
   };
